@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    outline:none;
+    font-family:'Nunito',sans-serif;
+    font-weight: 400;
+}
+html{
+   text-align:center;
+   font-size:62.5%;
+}
+body{
+  background-color:#eff0f3;
+  color:#2a2a2a;  
+  font-family:sans-serif;
+  
+}
+.list{
+    margin-top:10vh;
+}
+.title{
+    color:#d9376e;
+    font-size:5rem;
+    text-shadow: 3px 2px 3px #ff8ab1db;
+    
+}
+.list-box{
+    width:50vw;
+    height:17vh;
+    box-shadow: 0.5rem 0.5rem 0.1rem #cecece, 1rem 1rem 0.1rem #e3e3e3, 1.5rem 1.5rem 0.1rem #beb2b9;;
+    margin:auto;
+}
+.write-box{
+    background-color:#fffffe;
+    width:50vw;
+    height: 10vh;
+    display:block;
+    margin:auto;
+    margin-top:10px;
+    border:0px;
+    font-size:3.5rem;
+    padding:5px;
+    color:rgb(255, 94, 121);
+}
+.item-list{
+    background-color:#ffeaff;
+    border:0.5px solid rgb(212, 212, 212);
+    width:50vw;
+    height: 7vh;
+    display:block;
+}
+input::placeholder{
+    color:#beb2b95e;
+    font-style:italic;
+}
