@@ -1,17 +1,39 @@
 <html>
     <head>
         <link rel="stylesheet" href="stylesheet.css">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="script2.js"></script>
         <title> My to-do list</title>
     </head>
     <body>
         <div class="list">
             <div class="title"> My to-do list </div>
             <div class="list-box">
-                <div >
-                    <input type="text" class="write-box" placeholder="What is it to do?">
+                
+                <div class="box-coteiner">
+                    <span class="arrow">&#11184</span>
+                    <span class="arrow-back">&#11187</span>
+                    <input type="text" class="write-box" id="MyInput" placeholder="What is it to do?"> 
+                    <span class="items-left"></span>
                 </div>
-                <div class="item-list"></div>
+                <div class="conteinder-selector">
+                    <div class="selector" >Complete</div>
+                    <div class="selector" >All</div>
+                    <div class="selector" >Active</div>
+                    <div class="selector-clear">Clear completed</div>
+                </div>
+                <div class="item-list" id="items">
+                   
+                    
+                </div>
+                  
             </div>
+            
+            <div class="history">See history...</div>
+            <div class="history-close">Close history...</div>
+            <div class="down-text">You can see the items that you closed in History Mode</div>
+            <div class ="down-text"> Please close History Mode to interact again with the list</div>
+            <div class="down-text">Curently you can not reactivate items form history or edit current items</div>
         </div>
 
     </body>
