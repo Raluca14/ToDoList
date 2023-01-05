@@ -102,7 +102,7 @@ input::placeholder{
 
 .element{
   min-width:400px;
-    width:49.9vw;
+    width: 49.9vw;
     min-height: 7vh;
     background-color: #588DA7;
     /*border:1px solid black; */
@@ -125,6 +125,7 @@ input::placeholder{
     width:35vw;
     text-shadow: 1px 1px 1px #2a3d45;
     color:white;
+    cursor:pointer;
 }
 
 /*#items:nth-child(odd){
@@ -232,7 +233,11 @@ input::placeholder{
     border:1px solid rgb(160, 156, 156);
     border-radius: 5px;
   }
+  .selector-on{
+    background-color:#48556E ;
+  }
 
+  
   .items-left{
     
     font-size:130%;

@@ -5,12 +5,19 @@ document.addEventListener('keypress', function (e) {
     //item.classList.add("checked");
     inputValue = document.getElementById("MyInput").value;
     var t = document.createTextNode(inputValue);
+
     var p =document.createElement("div");
+    p.setAttribute("contenteditable","true");
+    p.setAttribute("spellcheck","false");
     p.classList.add("element-txt");
+    
     p.appendChild(t);    
+
     var span = document.createElement("div");
     span.classList.add("close");
+
     var txt = document.createTextNode("\u00D7");
+
     span.appendChild(txt);
     item.appendChild(span);
     item.appendChild(p);
@@ -43,6 +50,7 @@ document.addEventListener('keypress', function (e) {
             div.classList.remove("item-closed");
           } else{
             div.classList.add("item-closed");
+            div.getElementsByClassName("element-txt")[0].setAttribute("contenteditable","false");
           } 
         }
       }
@@ -71,8 +79,10 @@ for (i = 0; i < close.length; i++) {
     var div = this.parentElement;
     if(div.classList.contains("item-closed")){
       div.classList.remove("item-closed");
+      
     } else{
       div.classList.add("item-closed");
+      div.getElementsByClassName("element-txt")[0].setAttribute("contenteditable","false");
     }  
   }
 }
@@ -117,3 +127,5 @@ function  isHistoryActive(){
     return 0;
   }
 }
+
+

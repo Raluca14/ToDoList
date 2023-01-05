@@ -3,8 +3,8 @@
 //const element = document.getElementById("verified")
 
 window.onload=function(){ //a fost adaugat deoarece e[0] imi dadea null, adica se executa inainte ca dom sa se incarce complet
-var e = document.getElementsByClassName("selector");
-var v  = document.getElementsByClassName("element");
+var e = document.getElementsByClassName("selector"); //cele 3 filtre
+var v  = document.getElementsByClassName("element"); //elementele din lista
 let i=0;
 e[0].addEventListener('click', function(){
     if(isHistoryActive() === 1){
@@ -17,7 +17,14 @@ e[0].addEventListener('click', function(){
         }else{
             v[i].style.display="none";
         }
+        }
     }
+    e[0].classList.add("selector-on");
+    if(e[1].classList.contains("selector-on")) {
+        e[1].classList.remove("selector-on");
+    }
+    if(e[2].classList.contains("selector-on")) {
+        e[2].classList.remove("selector-on");
     }
     }
     
@@ -33,7 +40,15 @@ e[1].addEventListener('click', function(){
                 v[i].style.display="flex";
             }
     }
+    e[1].classList.add("selector-on");
+    if(e[0].classList.contains("selector-on")) {
+        e[0].classList.remove("selector-on");
     }
+    if(e[2].classList.contains("selector-on")) {
+        e[2].classList.remove("selector-on");
+    }
+    }
+    
     
 }, false);
 
@@ -49,6 +64,13 @@ e[2].addEventListener('click', function(){
             v[i].style.display="flex";
         }
     }
+    }
+    e[2].classList.add("selector-on");
+    if(e[1].classList.contains("selector-on")) {
+        e[1].classList.remove("selector-on");
+    }
+    if(e[0].classList.contains("selector-on")) {
+        e[0].classList.remove("selector-on");
     }
     }
     
@@ -111,7 +133,7 @@ a2[0].addEventListener('click', function(){
     } 
     }, false);  
     
- 
+//butonul care sterge toate elementele selectate
 var clear = document.getElementsByClassName("selector-clear");
 clear[0].addEventListener('click', function(){
     if(isHistoryActive() === 1){
@@ -121,6 +143,7 @@ for(i=0;i<v.length;i=i+1){
 
     if(!v[i].classList.contains("item-closed") && v[i].classList.contains("item-checked")){
         v[i].classList.add("item-closed");
+        v[i].getElementsByClassName("element-txt")[0].setAttribute("contenteditable","false");
         if(a2[0].style.display==="flex")
         {
             a2[0].style.display="none";
@@ -234,7 +257,20 @@ function  isHistoryActive(){
     }
   }
 
-
+//functie pentru a veridica daca exista elenente goale dupa editarea lor
+document.addEventListener("click",function(){
+    for(let i=0;i<v.length;i++){
+      var text = v[i].getElementsByClassName("element-txt")[0].textContent;
+      if(text===""){
+        console.log("Am intrat in if");
+          v[i].remove();
+      }
+      console.log("a"+text+"a");
+    }
+  },false)
+  
 }
+
+
 
   
